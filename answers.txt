@@ -1,0 +1,17 @@
+1- null
+
+2- Length 1, Capacity 0, Memory Address 0; if 1 push
+    Length 5, Capacity 12, ptr 3; if 5 push
+    * This function first compares the length to the capacity, only resizing if the length is larger
+    * It then sets new data at the current Memory Address and increases the length of the array
+    * Numerous calls in succession will continue growing the length, and only expand the capacity as needed
+    ** The pointer is always set to the beginning of the current array's Memory Allocation Address
+
+3- Length 2, Capacity 12, Memory Address 3; if 3 pops following 5 push
+    * This function cannont 'pop' an empty array
+    * It grabs the value by using the pointer (for memory purposes 0 doesn't mean 0 of the floating memory, but 0 of the allocated memory array set by pointer)
+
+4- The Result is NaN, maybe because the function is not equipped to process strings.
+    * _resize() is used for expanding the available amount of space for functions to use. It creates an old pointer equal to the current point, then
+    * it resets the active pointer by allocating additional size
+    * After that, it copies it's data to memory, discards the no longer relevant old pointer, and adjusts the capacity by refrencing size
